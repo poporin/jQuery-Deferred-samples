@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>sample1</title>
+    <script type="text/javascript" src="jquery-1.11.0.js"></script>
+    <script type="text/javascript">
+        var dfd = $.Deferred();
+        dfd
+                .done(function(){
+                    alert('Success!'+ ' ' + 'Deferredのstateは' + dfd.state());
+                })
+                .fail(function(){
+                    alert('error!'+ ' ' + 'Deferredのstateは' + dfd.state());
+                });
+        dfd.resolve();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
