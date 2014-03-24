@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>sample2</title>
+    <script type="text/javascript" src="jquery-1.11.0.js"></script>
+    <script type="text/javascript">
+        //[1]任意の機能を提供する
+        var dfd = $.Deferred(function(dfd){
+            alert('start');
+            setTimeout(function(){
+                //何か処理をして
+                alert('end');
+                //処理が完了したら、resolveして処理をコールバックに移す
+                dfd.resolve('We love AKB!!');
+            },2000);
+        });
+
+        //[2] 結果を受けて処理をする
+        dfd.done(function(result){
+            console.log(result);
+            alert(result);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
